@@ -1,8 +1,10 @@
-```
-npm install
-npm run dev
+# Hono API Boilerplate
+
+```bash
+yarn install
+yarn run dev
 ```
 
-```
-open http://localhost:3000
+```bash
+open http://localhost:8080
 ```
