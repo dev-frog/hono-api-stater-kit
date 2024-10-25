@@ -13,7 +13,7 @@ const router = createRouter()
       path: "/",
       responses: {
         [HttpStatusCodes.OK]: jsonContent(
-          createMessageObjectSchema("API Index Route"),
+          createMessageObjectSchema(`API Index Route`, HttpStatusCodes.OK, true, new Date().toISOString(), {}),
           "API Index Route",
         ),
       },
@@ -24,6 +24,7 @@ const router = createRouter()
         success: true,
         statusCode: HttpStatusCodes.OK,
         timestamp: new Date().toISOString(),
+        data: {},
       }, HttpStatusCodes.OK);
     },
   );
