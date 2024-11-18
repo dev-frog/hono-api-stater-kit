@@ -1,5 +1,4 @@
-import config from "config";
-import { INTERNAL_SERVER_ERROR, OK } from "@/libs/http-status-codes";
+import { INTERNAL_SERVER_ERROR, OK } from "../libs/http-status-codes.js";
 const onError = (err, c) => {
     const currentStatus = "status" in err
         ? err.status
@@ -7,7 +6,8 @@ const onError = (err, c) => {
     const statusCode = currentStatus !== OK
         ? currentStatus
         : INTERNAL_SERVER_ERROR;
-    const env = c.env?.NODE_ENV || config.get("server.note_env");
+    // eslint-disable-next-line node/no-process-env
+    const env = c.env?.NODE_ENV || process.env?.NODE_ENV;
     return c.json({
         stack: env === "production"
             ? undefined

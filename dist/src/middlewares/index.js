@@ -1,2 +1,2 @@
-export { default as errorHandler } from "@/errorHandler";
-export { default as notFound } from "@/notFound";
+export { default as notFound } from "./not-found.js";
+export { default as onError } from "./on-error.js";
